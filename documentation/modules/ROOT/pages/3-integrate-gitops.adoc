@@ -1,0 +1,81 @@
+= 3. Integrate OpenShift GitOps - 20 minutes
+:imagesdir: ../assets/images
+
+== Goals of this lab
+
+The goal is to build and deploy the modernized customer application to OpenShift using link:https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html-single/cicd/index#about-redhat-openshift-gitops_understanding-openshift-gitops[OpenShift GitOps (ArgoCD)^].
+
+* Update the configuration for the *gateway* service to now point to the modernized *customers* service.
+* Demonstrate that your *frontend* service still works as before.
+
+== 3.1. Sync the Gateway application in ArgoCD
+
+=== 3.1.1 Why OpenShift GitOps?
+
+`GitOps` in short is a set of practices to use *Git pull requests* to manage infrastructure and application configurations. A Git repository in GitOps is considered the only source of truth and contains the entire state of the system so that the trail of changes to the system state are visible and auditable.
+
+Traceability of changes in GitOps is no novelty in itself as this approach is almost universally employed for the application source code. However GitOps advocates applying the same principles (`reviews`, `pull requests`, `tagging`, etc) to infrastructure and application configuration so that teams can benefit from the same assurance as they do for the application source code.
+
+Although there is no precise definition or agreed upon set of rules, the following principles are an approximation of what constitutes a GitOps practice:
+
+* Declarative description of the system is stored in Git (configs, monitoring, etc)
+* Changes to the state are made via pull requests
+* Git push reconciled with the state of the running system with the state in the Git repository
+
+=== 3.1.2 Update the Gateway Configuration
+
+Before you update the `Gateway` configuration, take a look at the current link:https://console-openshift-console.%SUBDOMAIN%/k8s/ns/retail-%USERID%/configmaps/gateway-config[application.yaml^] data of the `gateway-config` ConfigMap.
+
+image::gateway-config.png[gateway-config]
+
+Go back to the link:https://argocd-server-retail-%USERID%.%SUBDOMAIN%/applications/applications?view=tree&resource=&node=argoproj.io%2FApplication%2Fretail-%USERID%%2Fapplications%2F0&tab=parameters[APP DETAILS^] in the ArgoCD admin console. Click on `EDIT`.
+
+image::gateway-config-argo.png[gateway-config-argo]
+
+Replace `customersHost` with the following value.
+
+[.console-input]
+[source,yaml]
+----
+customersHost: customers
+----
+
+Then, close the popup window by clicking `X` on the right top.
+
+Now you will see the `OutOfSync` status of the `gateway` application because you just only updated the ArgoCD's application parameter that is different than link:https://console-openshift-console.%SUBDOMAIN%/k8s/ns/retail-%USERID%/configmaps/gateway-config[gateway-config ConfigMap^] in the retail-%USERID% project.
+
+image::argocd-gateway-outofsync.png[argocd-gateway-outofsync]
+
+Click on `SYNC`. Then, click on `SYNCHRONIZE` on the left popup window.
+
+image::argocd-gateway-sync.png[argocd-gateway-sync]
+
+The application should be synced in a second.
+
+image::argocd-gateway-synced.png[argocd-gateway-synced]
+
+Go back to the OpenShift admin console to confirm if the `gateway-config` is updated based on the code change.
+
+image::gateway-new-configmap.png[gateway-new-configmap]
+
+== 3.2. Revisit the GLOBEX web page
+
+Let's go back to the `Customers` in the link:https://ordersfrontend-retail-%USERID%.%SUBDOMAIN%[GLOBEX web page^].
+
+image::frontend.png[Frontend]
+
+[NOTE]
+====
+You might see `Unknown` result for customers data since the customers application can't access the database on OpenShift Virtualization with an error - `java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist`. In that case, restart the `customers pod` by deleting the pod in OpenShift admin console.
+====
+
+== Summary
+
+You have now successfully deployed the new *customers* application by integrating OpenShift Pipeline and GitOps for the continuous delivery automation. You'll learn Learn how to extend an application using API management and implement an event driven architecture in `module 4 and 5`.
+
+== Additional Resources
+
+* https://www.redhat.com/en/topics/application-modernization[Understanding application modernization^]
+* https://www.redhat.com/en/topics/devops/what-cicd-pipeline[Cloud-native CI/CD on OpenShift^]
+* https://www.redhat.com/en/resources/java-app-modernization-with-openshift-e-book[eBook - Plan your Java application modernization journey^]
+* https://kubebyexample.com/en/learning-paths/migrating-kubernetes/assess-and-refactor-tackle[Migrating Kubernetes Learning Path^]
