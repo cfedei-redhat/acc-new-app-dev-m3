@@ -1,11 +1,11 @@
 {
-  "name": "mad-dev-guides-m3",
-  "description": "Modern Application Development Dev Track - Module 3",
-  "homepage": "https://github.com/RedHat-Middleware-Workshops/mad-dev-guides-m3.git",
+  "name": "acc-new-app-dev-m3",
+  "description": "Accelerate New App Development - Module 3",
+  "homepage": "https://github.com/juliaaano/acc-new-app-dev-m3.git",
   "author": {
-    "email": "doh@redhat.com",
-    "name": "Daniel Oh",
-    "url": "https://twitter.com/@danieloh30"
+    "email": "jbm@redhat.com",
+    "name": "Juliano Mohr",
+    "url": "https://twitter.com/@juliaaano"
   },
   "dependencies": {
     "@antora/cli": "^2.3.1",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RedHat-Middleware-Workshops/mad-dev-guides-m3.git"
+    "url": "git+https://github.com/juliaaano/acc-new-app-dev-m3.git"
   },
   "license": "Apache-2.0",
   "babel": {
