@@ -1,6 +1,8 @@
 = 1. Introduction - 10 minutes
 :imagesdir: ../assets/images
 
+THIS is a test message 123
+
 [NOTE]
 ====
 If you've already completed the introduction lab in the previous module, feel free to move forward directly to the 'Build CI/CD Pipelines' lab.

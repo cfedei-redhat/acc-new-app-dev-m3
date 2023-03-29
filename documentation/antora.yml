@@ -1,5 +1,5 @@
 name: acc-new-app-dev-m3
-title: Module 3 - Enable CI/CD Pipeline and GitOps
+title: Module 3 - Building a Flexible Architecture
 version: main
 nav:
   - modules/ROOT/nav.adoc
