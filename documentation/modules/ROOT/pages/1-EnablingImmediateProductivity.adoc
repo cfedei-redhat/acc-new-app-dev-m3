@@ -1,3 +1,79 @@
+# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+# Red Hat Summit 2023
+
+## ABOUT THIS LAB
+In this lab we'll address some ways that can help you with some major challenges we've witnessed with some of our largest customers:
+
+* In order to meet your customer's needs, you need the ability to deliver new capabilities through secure software applications rapidly, and continuously.
+* Many customers have applications that are architected and developed in such a way that they are not easily evolvable, agile enough to meet a rapid change in business reuirements, or even in a position to efficiently develop and maintain new applications, especially without reaching the same challenges again.
+* IT organizations need to facilitate securely buildable and deployable applications at scale for their developers, wherever it makes sense for the business - whether on-premesis, in a cloud, or even in a hybrid combination. 
+
+## LAB ASSETS
+https://supporting.slides.link[Supporting Slides]
+
+## INTRODUCTION
+I think we can all agree that fast, secure, and continuous deployment of great software is the backbone to this generations most successful organizations. Without a great digital experience that is constantly improving, a company risks being quickly outpaced by competitors and ultimately, obsolescence.
+
+Modern application development is an approach that enables your development team(s) to quickly respond to business needs and improve reaction to changes by rapidly updating applications and services. They are designed and packaged as microservices that are loosely coupled for easier maintenance with higher fault tolerances. Combining this with the power of a cloud-native environment, you can speed up your build and release cycles, with less operational overhead. 
+
+People often hesitate out of intimidation of difficult technology adoptions. This demo shows the new way of application development that can change the way an organization works, increasing each technical team's agility, relieving them from the life of repeatedly putting out fires.
+
+The lab presents a journey through the new cloud native application development, from code to production, from writing code and operating workload, to system design.
+
+## LAB WALKTHROUGH
+.Module Overview
+|===
+| https://link.to.module1.in.line[Enabling Immediate Productivity] |https://link.to.module2.in.line[Automating Guardrails] |https://link.to.module3.in.line[Building a Flexible Architecture]
+|===
+
+### Module One: Enabling Immediate Productivity
+#### Lessons Learned:
+How developers can achieve immediate productivity with built-in capabilities using the languages they are already familiar with, and predefined development pathways that meet your team's needs.
+
+#### Instructions:
+
+**DEV EXPERIENCE & POLYGLOT**
+
+**LIVE CODING**
+
+**CONTAINER-HELP**
+
+**SELF-PROVISIONING**
+
+
+
+
+## Congratulations on completing this module!
+*Please return to your user assignment or click here for https://link.to.module2.in.line[Module 2 - Automating Guardrails].*
+
+*Don't forget to review the listed training courses available through Red Hat Training and Certification.*
+
+*Additionally, below you’ll find a few Red Hat Portfolio Architectures that can be useful for understanding how some of our customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
+
+* https://www.redhat.com/architect/portfolio/detail/4[**Cloud Native Development**] : Cloud-native development is an approach to building and running applications to fully exploit the advantages of cloud computing.
+* https://www.redhat.com/architect/portfolio/detail/8[**Hybrid Multi Cloud Management with GitOps**] : Unify continuous delivery as well as secured secret management across both hybrid and multi cloud environments.
+* https://www.redhat.com/architect/portfolio/detail/27[**Event Driven Automation**] : Automating event response for configuration changes, security preparedness, or emergency incident handling across a scaling estate, whether on-premises in physical data centers or in public/private clouds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+OLD CONTENT
+-----------------------------------------------------------------------------------------------------------
+
 = 1. Introduction - 10 minutes
 :imagesdir: ../assets/images
 
